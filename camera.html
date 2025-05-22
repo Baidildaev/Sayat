@@ -6,12 +6,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Электроника Дүкені</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css"> <!-- Сіздің негізгі style.css файлыңыз -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+    <style>
+        /* Өнім суреттері үшін арнайы стильдер */
+        #product-cards .card .product-image {
+            height: 250px; /* Барлық өнім суреттері үшін бекітілген биіктік */
+            width: 100%;   /* Сурет контейнерінің толық енін алуы үшін */
+            object-fit: contain; /* Мазмұнның пропорциясын сақтай отырып, суретті мазмұн ұясына сыйғызады */
+            padding: 15px; /* Сурет айналасына біраз бос орын қосады */
+            display: block; /* Блоктық элемент ретінде әрекет етуін қамтамасыз етеді */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #product-cards .card {
+            display: flex;
+            flex-direction: column;
+            height: 100%; /* Бір қатардағы карточкалардың бірдей биіктікті алуын қамтамасыз етеді */
+        }
+
+        #product-cards .card-body {
+            flex-grow: 1; /* Карточканың негізгі бөлігінің кеңейіп, төменгі жағын итеруіне мүмкіндік береді */
+            display: flex;
+            flex-direction: column; /* Элементтерді тігінен орналастырады */
+        }
+
+        #product-cards .card-body .star {
+            margin-bottom: 0.5rem; /* Жұлдыздардың астына бос орын қосу */
+        }
+        
+        #product-cards .card-body h2 { /* Баға элементі */
+            margin-top: auto; /* Бағаны карточканың негізгі бөлігінің төменгі жағына итереді */
+        }
+    </style>
 </head>
 
 <body>
@@ -63,24 +95,24 @@
 
     <!-- Product Cards -->
     <div class="container" id="product-cards">
-        <h1 class="text-center">ӨНІМДЕР</h1>
+        <h1 class="text-center">БЕЙНЕБАҚЫЛАУ КАМЕРАЛАРЫ</h1>
         <div class="row" style="margin-top: 30px">
             <div class="col-md-3 py-3 py-md-0">
                 <div class="card">
-                    <img src="./images/belyj-titan-1-500x500.png" alt="Iphone 16 pro" />
+                    <img src="https://magazun.com/images/detailed/177/159dd10f-a504-11e7-a209-94de8000916c.jpg" class="product-image" alt="Hikvision DS-2CE56D0T-IRMF" />
                     <div class="card-body">
-                        <h3 class="text-center">Iphone 16 pro max</h3>
-                        <p class="text-center">Заманауи смартфон, жоғары сапалы камерамен.</p>
+                        <h3 class="text-center">Hikvision DS-2CE56D0T-IRMF</h3>
+                        <p class="text-center">Ішкі/сыртқы HD күмбезді камера, ИҚ-жарығымен.</p>
                         <div class="star text-center">
                             <i class="fa-solid fa-star checked"></i>
                             <i class="fa-solid fa-star checked"></i>
                             <i class="fa-solid fa-star checked"></i>
                             <i class="fa-solid fa-star checked"></i>
-                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-solid fa-star-half-stroke checked"></i>
                         </div>
                         <h2 class="text-center">
-                            500 000 тг
-                            <span><i class="fa-solid fa-cart-shopping" onclick="addToCart('iPhone 16 Pro')"
+                            25 000 тг
+                            <span><i class="fa-solid fa-cart-shopping" onclick="addToCart('Hikvision DS-2CE56D0T-IRMF')"
                                     style="cursor: pointer;"></i></span>
                         </h2>
                     </div>
@@ -89,10 +121,10 @@
 
             <div class="col-md-3 py-3 py-md-0">
                 <div class="card">
-                    <img src="./images/iphone16proo.jpg" alt="AirPods" />
+                    <img src="https://cdn1.ozone.ru/s3/multimedia-1-h/7058136185.jpg" class="product-image" alt="Dahua DH-IPC-HFW1230S1P-S5" />
                     <div class="card-body">
-                        <h3 class="text-center">Iphone 16 pro</h3>
-                        <p class="text-center">Сымсыз құлаққаптар, сапалы дыбыс.</p>
+                        <h3 class="text-center">Dahua DH-IPC-HFW1230S1P-S5</h3>
+                        <p class="text-center">Сыртқы IP-камера, жоғары ажыратымдылық, түнгі көру.</p>
                         <div class="star text-center">
                             <i class="fa-solid fa-star checked"></i>
                             <i class="fa-solid fa-star checked"></i>
@@ -101,8 +133,8 @@
                             <i class="fa-solid fa-star checked"></i>
                         </div>
                         <h2 class="text-center">
-                            50 000 тг
-                            <span><i class="fa-solid fa-cart-shopping" onclick="addToCart('AirPods')"
+                            35 000 тг
+                            <span><i class="fa-solid fa-cart-shopping" onclick="addToCart('Dahua DH-IPC-HFW1230S1P-S5')"
                                     style="cursor: pointer;"></i></span>
                         </h2>
                     </div>
@@ -111,20 +143,20 @@
 
             <div class="col-md-3 py-3 py-md-0">
                 <div class="card">
-                    <img src="./images/Iphone16.png" alt="Ноутбук" />
+                    <img src="https://avatars.mds.yandex.net/i?id=201239a3cf696e0e5cc14ccea5abab6088193e9c-5714482-images-thumbs&n=13" class="product-image" alt="Xiaomi Mi Home Security Camera 360° 2K" />
                     <div class="card-body">
-                        <h3 class="text-center">Iphone 16</h3>
-                        <p class="text-center">Күнделікті жұмыс пен оқу үшін қолайлы.</p>
+                        <h3 class="text-center">Xiaomi Mi Home Security Camera 360° 2K</h3>
+                        <p class="text-center">Айналмалы үй камерасы, 2K ажыратымдылық, екі жақты аудио.</p>
                         <div class="star text-center">
                             <i class="fa-solid fa-star checked"></i>
                             <i class="fa-solid fa-star checked"></i>
                             <i class="fa-solid fa-star checked"></i>
                             <i class="fa-solid fa-star checked"></i>
-                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-regular fa-star checked"></i>
                         </div>
                         <h2 class="text-center">
-                            100 000 тг
-                            <span><i class="fa-solid fa-cart-shopping" onclick="addToCart('Ноутбук')"
+                            28 000 тг
+                            <span><i class="fa-solid fa-cart-shopping" onclick="addToCart('Xiaomi Mi Home Security Camera 360° 2K')"
                                     style="cursor: pointer;"></i></span>
                         </h2>
                     </div>
@@ -133,20 +165,20 @@
 
             <div class="col-md-3 py-3 py-md-0">
                 <div class="card">
-                    <img src="./images/t1.png" alt="iPad" />
+                    <img src="https://avatars.mds.yandex.net/i?id=75303de1a467c3709f0c17b25a2e57a073e4c896-5889273-images-thumbs&n=13" class="product-image" alt="TP-Link Tapo C200" />
                     <div class="card-body">
-                        <h3 class="text-center">Iphone 15 plus</h3>
-                        <p class="text-center">Оқу, жұмыс және ойын үшін планшет.</p>
+                        <h3 class="text-center">TP-Link Tapo C200</h3>
+                        <p class="text-center">Wi-Fi PTZ камера, қозғалыс детекторы, жергілікті жазба.</p>
                         <div class="star text-center">
                             <i class="fa-solid fa-star checked"></i>
                             <i class="fa-solid fa-star checked"></i>
                             <i class="fa-solid fa-star checked"></i>
-                            <i class="fa-solid fa-star checked"></i>
-                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-solid fa-star-half-stroke checked"></i>
+                            <i class="fa-regular fa-star checked"></i>
                         </div>
                         <h2 class="text-center">
-                            150 000 тг
-                            <span><i class="fa-solid fa-cart-shopping" onclick="addToCart('iPad')"
+                            22 000 тг
+                            <span><i class="fa-solid fa-cart-shopping" onclick="addToCart('TP-Link Tapo C200')"
                                     style="cursor: pointer;"></i></span>
                         </h2>
                     </div>
@@ -158,10 +190,10 @@
         <div class="row" style="margin-top: 30px">
             <div class="col-md-3 py-3 py-md-0">
                 <div class="card">
-                    <img src="./images/belyj-titan-1-500x500.png" alt="Iphone 16 pro" />
+                    <img src="https://avatars.mds.yandex.net/i?id=3f6f05c4f25aed47e3f32b094dd78ec93a916587-5236122-images-thumbs&n=13" class="product-image" alt="EZVIZ C6N" />
                     <div class="card-body">
-                        <h3 class="text-center">Iphone 15 pro max</h3>
-                        <p class="text-center">Заманауи смартфон, жоғары сапалы камерамен.</p>
+                        <h3 class="text-center">EZVIZ C6N</h3>
+                        <p class="text-center">Ақылды Wi-Fi панорамалық-еңкейту камерасы, смарт бақылау.</p>
                         <div class="star text-center">
                             <i class="fa-solid fa-star checked"></i>
                             <i class="fa-solid fa-star checked"></i>
@@ -170,8 +202,8 @@
                             <i class="fa-solid fa-star checked"></i>
                         </div>
                         <h2 class="text-center">
-                            500 000 тг
-                            <span><i class="fa-solid fa-cart-shopping" onclick="addToCart('iPhone 16 Pro')"
+                            30 000 тг
+                            <span><i class="fa-solid fa-cart-shopping" onclick="addToCart('EZVIZ C6N')"
                                     style="cursor: pointer;"></i></span>
                         </h2>
                     </div>
@@ -180,10 +212,32 @@
 
             <div class="col-md-3 py-3 py-md-0">
                 <div class="card">
-                    <img src="./images/airpods_proo.png" alt="AirPods" />
+                    <img src="https://avatars.mds.yandex.net/i?id=a6aa5e35201a67b62506639736d5242b4a9d2754-5300055-images-thumbs&n=13" class="product-image" alt="Reolink Argus 3 Pro" />
                     <div class="card-body">
-                        <h3 class="text-center">Iphone 15 pro</h3>
-                        <p class="text-center">Сымсыз құлаққаптар, сапалы дыбыс.</p>
+                        <h3 class="text-center">Reolink Argus 3 Pro</h3>
+                        <p class="text-center">Сымсыз аккумуляторлық камера, прожектор, түсті түнгі көру.</p>
+                        <div class="star text-center">
+                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-solid fa-star-half-stroke checked"></i>
+                        </div>
+                        <h2 class="text-center">
+                            65 000 тг
+                            <span><i class="fa-solid fa-cart-shopping" onclick="addToCart('Reolink Argus 3 Pro')"
+                                    style="cursor: pointer;"></i></span>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 py-3 py-md-0">
+                <div class="card">
+                    <img src="https://avatars.mds.yandex.net/i?id=aaca1ed945dd85b2fd8e1fd406e3ea8e4ee0a636-10814916-images-thumbs&n=13" class="product-image" alt="Anker EufyCam 2C Pro" />
+                    <div class="card-body">
+                        <h3 class="text-center">Anker EufyCam 2C Pro</h3>
+                        <p class="text-center">Сымсыз қауіпсіздік жүйесі, 2K, 180 күндік батарея.</p>
                         <div class="star text-center">
                             <i class="fa-solid fa-star checked"></i>
                             <i class="fa-solid fa-star checked"></i>
@@ -192,8 +246,8 @@
                             <i class="fa-solid fa-star checked"></i>
                         </div>
                         <h2 class="text-center">
-                            50 000 тг
-                            <span><i class="fa-solid fa-cart-shopping" onclick="addToCart('AirPods')"
+                            95 000 тг
+                            <span><i class="fa-solid fa-cart-shopping" onclick="addToCart('Anker EufyCam 2C Pro')"
                                     style="cursor: pointer;"></i></span>
                         </h2>
                     </div>
@@ -202,32 +256,10 @@
 
             <div class="col-md-3 py-3 py-md-0">
                 <div class="card">
-                    <img src="./images/laptop2.png" alt="Ноутбук" />
+                    <img src="https://avatars.mds.yandex.net/i?id=bf17bab24095ea5f23306c63a0f407f2fa9cca51-5322230-images-thumbs&n=13" class="product-image" alt="Axis M1065-L" />
                     <div class="card-body">
-                        <h3 class="text-center">Iphone 15</h3>
-                        <p class="text-center">Күнделікті жұмыс пен оқу үшін қолайлы.</p>
-                        <div class="star text-center">
-                            <i class="fa-solid fa-star checked"></i>
-                            <i class="fa-solid fa-star checked"></i>
-                            <i class="fa-solid fa-star checked"></i>
-                            <i class="fa-solid fa-star checked"></i>
-                            <i class="fa-solid fa-star checked"></i>
-                        </div>
-                        <h2 class="text-center">
-                            100 000 тг
-                            <span><i class="fa-solid fa-cart-shopping" onclick="addToCart('Ноутбук')"
-                                    style="cursor: pointer;"></i></span>
-                        </h2>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 py-3 py-md-0">
-                <div class="card">
-                    <img src="./images/iphone15plus.png" alt="iPad" />
-                    <div class="card-body">
-                        <h3 class="text-center">Iphone 15 plus</h3>
-                        <p class="text-center">Оқу, жұмыс және ойын үшін планшет.</p>
+                        <h3 class="text-center">Axis M1065-L</h3>
+                        <p class="text-center">Кәсіби желілік камера, HDTV 1080p, PoE.</p>
                         <div class="star text-center">
                             <i class="fa-solid fa-star checked"></i>
                             <i class="fa-solid fa-star checked"></i>
@@ -237,7 +269,7 @@
                         </div>
                         <h2 class="text-center">
                             150 000 тг
-                            <span><i class="fa-solid fa-cart-shopping" onclick="addToCart('iPad')"
+                            <span><i class="fa-solid fa-cart-shopping" onclick="addToCart('Axis M1065-L')"
                                     style="cursor: pointer;"></i></span>
                         </h2>
                     </div>
@@ -256,7 +288,7 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         crossorigin="anonymous"></script>
-    <script src="script.js"></script>
+    <script src="script.js"></script> <!-- Сіздің JavaScript файлыңыз -->
 </body>
 
 </html>
