@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="kk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Электроника Дүкені</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- top navbar -->
+    <div class="top-navbar">
+        <p>Қош келдіңіз!</p>
+        <div class="icons">
+            <a href="login.html"><img src="./images/register.png" alt="" width="18px">Кіру</a>
+            <a href="register.html"><img src="./images/register.png" alt="" width="18px">Тіркелу</a>
+        </div>
+    </div>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg" id="navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html" id="logo"><span id="span1">Э</span>лектрондық
+                <span>Дүкен</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent">
+                <span><img src="./images/menu.png" alt="" width="30px"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Басты бет</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Санаттар
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown"
+                            style="background-color: rgb(67 0 86)">
+                            <li><a class="dropdown-item" href="smartphone.html">Ұялы телефон</a></li>
+                            <li><a class="dropdown-item" href="mobile.html">Құлаққаптар</a></li>
+                            <li><a class="dropdown-item" href="camera.html">Камералар</a></li>
+                            <li><a class="dropdown-item" href="fridge.html">Тоңазытқыш</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Байланыс</a>
+                    </li>
+                </ul>
+                <form class="d-flex" id="search">
+                    <input class="form-control me-2" type="search" placeholder="Іздеу..." aria-label="Іздеу">
+                    <button class="btn btn-outline-success" type="submit">Іздеу</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Product Cards -->
+    <div class="container" id="product-cards">
+        <h1 class="text-center">ӨНІМДЕР</h1>
+        <div class="row" style="margin-top: 30px">
+            <div class="col-md-3 py-3 py-md-0">
+                <div class="card">
+                    <img src="./images/belyj-titan-1-500x500.png" alt="Iphone 16 pro" />
+                    <div class="card-body">
+                        <h3 class="text-center">Iphone 16 pro max</h3>
+                        <p class="text-center">Заманауи смартфон, жоғары сапалы камерамен.</p>
+                        <div class="star text-center">
+                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-solid fa-star checked"></i>
+                        </div>
+                        <h2 class="text-center">
+                            500 000 тг
+                            <span><i class="fa-solid fa-cart-shopping" onclick="addToCart('iPhone 16 Pro')"
+                                    style="cursor: pointer;"></i></span>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 py-3 py-md-0">
+                <div class="card">
+                    <img src="./images/iphone16proo.jpg" alt="AirPods" />
+                    <div class="card-body">
+                        <h3 class="text-center">Iphone 16 pro</h3>
+                        <p class="text-center">Сымсыз құлаққаптар, сапалы дыбыс.</p>
+                        <div class="star text-center">
+                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-solid fa-star checked"></i>
+                        </div>
+                        <h2 class="text-center">
+                            50 000 тг
+                            <span><i class="fa-solid fa-cart-shopping" onclick="addToCart('AirPods')"
+                                    style="cursor: pointer;"></i></span>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 py-3 py-md-0">
+                <div class="card">
+                    <img src="./images/Iphone16.png" alt="Ноутбук" />
+                    <div class="card-body">
+                        <h3 class="text-center">Iphone 16</h3>
+                        <p class="text-center">Күнделікті жұмыс пен оқу үшін қолайлы.</p>
+                        <div class="star text-center">
+                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-solid fa-star checked"></i>
+                        </div>
+                        <h2 class="text-center">
+                            100 000 тг
+                            <span><i class="fa-solid fa-cart-shopping" onclick="addToCart('Ноутбук')"
+                                    style="cursor: pointer;"></i></span>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 py-3 py-md-0">
+                <div class="card">
+                    <img src="./images/t1.png" alt="iPad" />
+                    <div class="card-body">
+                        <h3 class="text-center">Iphone 15 plus</h3>
+                        <p class="text-center">Оқу, жұмыс және ойын үшін планшет.</p>
+                        <div class="star text-center">
+                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-solid fa-star checked"></i>
+                        </div>
+                        <h2 class="text-center">
+                            150 000 тг
+                            <span><i class="fa-solid fa-cart-shopping" onclick="addToCart('iPad')"
+                                    style="cursor: pointer;"></i></span>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="product-cards">
+        <div class="row" style="margin-top: 30px">
+            <div class="col-md-3 py-3 py-md-0">
+                <div class="card">
+                    <img src="./images/belyj-titan-1-500x500.png" alt="Iphone 16 pro" />
+                    <div class="card-body">
+                        <h3 class="text-center">Iphone 15 pro max</h3>
+                        <p class="text-center">Заманауи смартфон, жоғары сапалы камерамен.</p>
+                        <div class="star text-center">
+                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-solid fa-star checked"></i>
+                        </div>
+                        <h2 class="text-center">
+                            500 000 тг
+                            <span><i class="fa-solid fa-cart-shopping" onclick="addToCart('iPhone 16 Pro')"
+                                    style="cursor: pointer;"></i></span>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 py-3 py-md-0">
+                <div class="card">
+                    <img src="./images/airpods_proo.png" alt="AirPods" />
+                    <div class="card-body">
+                        <h3 class="text-center">Iphone 15 pro</h3>
+                        <p class="text-center">Сымсыз құлаққаптар, сапалы дыбыс.</p>
+                        <div class="star text-center">
+                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-solid fa-star checked"></i>
+                        </div>
+                        <h2 class="text-center">
+                            50 000 тг
+                            <span><i class="fa-solid fa-cart-shopping" onclick="addToCart('AirPods')"
+                                    style="cursor: pointer;"></i></span>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 py-3 py-md-0">
+                <div class="card">
+                    <img src="./images/laptop2.png" alt="Ноутбук" />
+                    <div class="card-body">
+                        <h3 class="text-center">Iphone 15</h3>
+                        <p class="text-center">Күнделікті жұмыс пен оқу үшін қолайлы.</p>
+                        <div class="star text-center">
+                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-solid fa-star checked"></i>
+                        </div>
+                        <h2 class="text-center">
+                            100 000 тг
+                            <span><i class="fa-solid fa-cart-shopping" onclick="addToCart('Ноутбук')"
+                                    style="cursor: pointer;"></i></span>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 py-3 py-md-0">
+                <div class="card">
+                    <img src="./images/iphone15plus.png" alt="iPad" />
+                    <div class="card-body">
+                        <h3 class="text-center">Iphone 15 plus</h3>
+                        <p class="text-center">Оқу, жұмыс және ойын үшін планшет.</p>
+                        <div class="star text-center">
+                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-solid fa-star checked"></i>
+                        </div>
+                        <h2 class="text-center">
+                            150 000 тг
+                            <span><i class="fa-solid fa-cart-shopping" onclick="addToCart('iPad')"
+                                    style="cursor: pointer;"></i></span>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container text-center py-3">
+            <p class="m-0">© 2025 Электроника Онлайн. Барлық құқықтар қорғалған.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

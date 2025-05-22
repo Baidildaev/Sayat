@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="kk">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Электроника Дүкені</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- top navbar -->
+  <div class="top-navbar">
+    <p>Қош келдіңіз!</p>
+    <div class="icons">
+      <a href="login.html"><img src="./images/register.png" alt="" width="18px">Кіру</a>
+      <a href="register.html"><img src="./images/register.png" alt="" width="18px">Тіркелу</a>
+    </div>
+  </div>
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-lg" id="navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html" id="logo"><span id="span1">Э</span>лектрондық <span>Дүкен</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+        <span><img src="./images/menu.png" alt="" width="30px"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Басты бет</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+              Санаттар
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: rgb(67 0 86)">
+              <li><a class="dropdown-item" href="smartphone.html">Ұялы телефон</a></li>
+              <li><a class="dropdown-item" href="mobile.html">Құлаққаптар</a></li>
+              <li><a class="dropdown-item" href="camera.html">Камералар</a></li>
+              <li><a class="dropdown-item" href="fridge.html">Тоңазытқыш</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Байланыс</a>
+          </li>
+        </ul>
+        <form class="d-flex" id="search">
+          <input class="form-control me-2" type="search" placeholder="Іздеу">
+          <button class="btn btn-outline-success" type="submit">Іздеу</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <!-- тіркелу -->
+  <div class="container" id="login">
+    <div class="row">
+      <div class="col-md-5 py-3 py-md-0" id="side1">
+        <h3 class="text-center">Тіркелу</h3>
+      </div>
+      <div class="col-md-7 py-3 py-md-0" id="side2">
+        <h3 class="text-center">Аккаунт ашу</h3>
+        <div class="input2 text-center">
+          <input type="name" placeholder="Атыңыз">
+          <input type="name" placeholder="Пайдаланушы аты">
+          <input type="number" placeholder="Телефон">
+          <input type="email" placeholder="Электронды пошта">
+          <input type="password" placeholder="Құпиясөз">
+        </div>
+        <p class="text-center" id="btnlogin"><a href="#">ТІРКЕЛУ</a></p>
+      </div>
+    </div>
+  </div>
+  <!-- жаңалықтар -->
+
+  <!-- footer -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>Электроника Дүкені</h3>
+            <strong>Телефон:</strong> +7 777 330 48 15<br>
+            <strong>Эл. пошта:</strong> SayatSamatovich@gmail.com<br>
+          </div>
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Пайдалы сілтемелер</h4>
+            <ul>
+              <li><a href="#">Қызмет көрсету шарттары</a></li>
+              <li><a href="#">Құпиялылық саясаты</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Әлеуметтік желілеріміз</h4>
+            <p>Электроника және жаңа технологиялар туралы соңғы жаңалықтарды алыңыз.</p>
+            <div class="socail-links mt-3">
+              <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </footer>
+  <a href="#" class="arrow"><i><img src="./images/arrow.png" alt=""></i></a>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
