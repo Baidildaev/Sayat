@@ -325,7 +325,8 @@
             </div>
             <h2>
               100 000 тг <span>
-                <i class="fa-solid fa-cart-shopping" onclick="addToCart('Кір жуу машинасы')" style="cursor: pointer;"></i>
+                <i class="fa-solid fa-cart-shopping" onclick="addToCart('Кір жуу машинасы')"
+                  style="cursor: pointer;"></i>
               </span>
             </h2>
           </div>
@@ -365,7 +366,8 @@
             </div>
             <h2>
               200 000 тг <span>
-                <i class="fa-solid fa-cart-shopping" onclick="addToCart('Микротолқынды пеш')" style="cursor: pointer;"></i>
+                <i class="fa-solid fa-cart-shopping" onclick="addToCart('Микротолқынды пеш')"
+                  style="cursor: pointer;"></i>
               </span>
             </h2>
           </div>
@@ -445,7 +447,7 @@
           </div>
           <h2>
             35 000 тг <span>
-                <i class="fa-solid fa-cart-shopping" onclick="addToCart('Желдеткіш')" style="cursor: pointer;"></i>
+              <i class="fa-solid fa-cart-shopping" onclick="addToCart('Желдеткіш')" style="cursor: pointer;"></i>
             </span>
           </h2>
         </div>
@@ -467,7 +469,7 @@
           </div>
           <h2>
             200 000 тг <span>
-                <i class="fa-solid fa-cart-shopping" onclick="addToCart('Тоңазытқыш')" style="cursor: pointer;"></i>
+              <i class="fa-solid fa-cart-shopping" onclick="addToCart('Тоңазытқыш')" style="cursor: pointer;"></i>
             </span>
           </h2>
         </div>
@@ -489,7 +491,7 @@
           </div>
           <h2>
             250 000 тг <span>
-                <i class="fa-solid fa-cart-shopping" onclick="addToCart('Ойын компьютері')" style="cursor: pointer;"></i>
+              <i class="fa-solid fa-cart-shopping" onclick="addToCart('Ойын компьютері')" style="cursor: pointer;"></i>
             </span>
           </h2>
         </div>
@@ -511,7 +513,7 @@
           </div>
           <h2>
             110 000 тг <span>
-                <i class="fa-solid fa-cart-shopping" onclick="addToCart('Монитор')" style="cursor: pointer;"></i>
+              <i class="fa-solid fa-cart-shopping" onclick="addToCart('Монитор')" style="cursor: pointer;"></i>
             </span>
           </h2>
         </div>
@@ -535,7 +537,7 @@
           </div>
           <h2>
             150 000 тг <span>
-                <i class="fa-solid fa-cart-shopping" onclick="addToCart('Ақылды сағат')" style="cursor: pointer;"></i>
+              <i class="fa-solid fa-cart-shopping" onclick="addToCart('Ақылды сағат')" style="cursor: pointer;"></i>
             </span>
           </h2>
         </div>
@@ -557,7 +559,7 @@
           </div>
           <h2>
             10 000 тг <span>
-                <i class="fa-solid fa-cart-shopping" onclick="addToCart('Пауэрбанк')" style="cursor: pointer;"></i>
+              <i class="fa-solid fa-cart-shopping" onclick="addToCart('Пауэрбанк')" style="cursor: pointer;"></i>
             </span>
           </h2>
         </div>
@@ -579,7 +581,7 @@
           </div>
           <h2>
             35 000 тг <span>
-                <i class="fa-solid fa-cart-shopping" onclick="addToCart('Ойын тінтуірі')" style="cursor: pointer;"></i>
+              <i class="fa-solid fa-cart-shopping" onclick="addToCart('Ойын тінтуірі')" style="cursor: pointer;"></i>
             </span>
           </h2>
         </div>
@@ -601,7 +603,7 @@
           </div>
           <h2>
             50 000 тг <span>
-                <i class="fa-solid fa-cart-shopping" onclick="addToCart('Джойстиктер')" style="cursor: pointer;"></i>
+              <i class="fa-solid fa-cart-shopping" onclick="addToCart('Джойстиктер')" style="cursor: pointer;"></i>
             </span>
           </h2>
         </div>
@@ -690,12 +692,19 @@
 
 
 
-  <div id="cart"
-    style="display: none; position: fixed; right: 20px; top: 100px; background: white; border: 1px solid #ccc; padding: 10px; z-index: 999;">
-    <h3>Себет</h3>
-    <ul id="cart-items"></ul>
+  <div id="cart" style="display: none; position: fixed; right: 20px; top: 70px; width: 300px; max-height: 400px; overflow-y: auto;
+         background: white; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+         padding: 15px; z-index: 999;">
+    <h4 style="margin-top: 0; margin-bottom: 10px;">🛍️ Себет</h4>
+    <ul id="cart-items" style="padding-left: 18px; margin-bottom: 10px;"></ul>
+    <button onclick="toggleCart()" style="width: 100%; background-color: #ffc800; border: none; padding: 8px;
+          border-radius: 4px; font-weight: bold;">Жабу</button>
   </div>
 
+  <button onclick="toggleCart()">
+    <img src="images/cart-icon.png" width="20" />
+    Себет (<span id="cart-count">0</span>)
+  </button>
 
 
 
@@ -704,35 +713,80 @@
 
 
 
-  <script>
-    const cartItems = [];
 
-    function addToCart(productName) {
-      cartItems.push(productName);
-      renderCart();
-      showCart(); // автоматически показываем корзину
-    }
 
-    function renderCart() {
-      const list = document.getElementById('cart-items');
-      list.innerHTML = '';
-      cartItems.forEach(item => {
-        const li = document.createElement('li');
-        li.textContent = item;
-        list.appendChild(li);
-      });
-    }
+  
+    <script>
+        let cartItems = [];
 
-    function showCart() {
-      const cart = document.getElementById('cart');
-      cart.style.display = 'block';
-    }
+        function addToCart(name, price) {
+            const existing = cartItems.find(item => item.name === name);
+            if (existing) {
+                existing.quantity++;
+            } else {
+                cartItems.push({ name, price, quantity: 1 });
+            }
+            renderCart();
+            showCart();
+        }
 
-    function toggleCart() {
-      const cart = document.getElementById('cart');
-      cart.style.display = cart.style.display === 'none' ? 'block' : 'none';
-    }
-  </script>
+        function renderCart() {
+            const list = document.getElementById('cart-items');
+            const count = document.getElementById('cart-count');
+            list.innerHTML = '';
+            let total = 0;
+
+            cartItems.forEach((item, index) => {
+                const li = document.createElement('li');
+                li.innerHTML = `${item.name} x${item.quantity} – ${item.price * item.quantity} тг 
+        <button onclick="removeFromCart(${index})">✖</button>`;
+                list.appendChild(li);
+                total += item.price * item.quantity;
+            });
+
+            count.textContent = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+        }
+
+        function removeFromCart(index) {
+            cartItems.splice(index, 1);
+            renderCart();
+        }
+
+        function showCart() {
+            document.getElementById('cart').style.display = 'block';
+        }
+
+        function toggleCart() {
+            const cart = document.getElementById('cart');
+            cart.style.display = cart.style.display === 'none' ? 'block' : 'none';
+        }
+
+        // Авто-привязка ко всем товарам
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.add-to-cart').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const name = btn.getAttribute('data-name');
+                    const price = parseInt(btn.getAttribute('data-price'));
+                    addToCart(name, price);
+                });
+            });
+        });
+    </script>
+    <!-- Кнопка для открытия корзины -->
+    <button onclick="toggleCart()" style="position: fixed; top: 20px; right: 20px; z-index: 1000;">
+        🛒 Себет (<span id="cart-count">0</span>)
+    </button>
+
+    <!-- Блок корзины -->
+    <div id="cart" style="display: none; position: fixed; right: 20px; top: 80px; width: 280px; max-height: 400px; overflow-y: auto;
+         background: white; border: 1px solid #ccc; padding: 15px; z-index: 999;
+         box-shadow: 0 4px 10px rgba(0,0,0,0.2); border-radius: 8px;">
+        <h4 style="margin-top: 0;">🛍️ Себет</h4>
+        <ul id="cart-items" style="padding-left: 20px;"></ul>
+        <button onclick="toggleCart()" style="width: 100%; background-color: #ffc800; border: none;
+          padding: 8px; border-radius: 4px; font-weight: bold;">Жабу</button>
+    </div>
+
 
 
 
