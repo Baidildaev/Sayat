@@ -326,6 +326,7 @@
             }
             renderCart();
             showCart();
+            document.getElementById('cart-button').style.display = 'block';
         }
 
         function renderCart() {
@@ -336,13 +337,19 @@
 
             cartItems.forEach((item, index) => {
                 const li = document.createElement('li');
-                li.innerHTML = `${item.name} x${item.quantity} – ${item.price * item.quantity} тг 
-        <button onclick="removeFromCart(${index})">✖</button>`;
+                li.innerHTML = `
+        ${item.name} x${item.quantity} – ${item.price * item.quantity} тг 
+        <button onclick="removeFromCart(${index})" style="color:red; border:none; background:none; font-size:16px;">✖</button>
+      `;
                 list.appendChild(li);
                 total += item.price * item.quantity;
             });
 
             count.textContent = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+
+            if (cartItems.length === 0) {
+                document.getElementById('cart-button').style.display = 'none';
+            }
         }
 
         function removeFromCart(index) {
@@ -358,23 +365,25 @@
             const cart = document.getElementById('cart');
             cart.style.display = cart.style.display === 'none' ? 'block' : 'none';
         }
-
-        // Авто-привязка ко всем товарам
-        document.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('.add-to-cart').forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const name = btn.getAttribute('data-name');
-                    const price = parseInt(btn.getAttribute('data-price'));
-                    addToCart(name, price);
-                });
-            });
-        });
     </script>
+
+
     <!-- Кнопка для открытия корзины -->
-    <button onclick="toggleCart()" style="position: fixed; top: 20px; right: 20px; z-index: 1000;">
+    <button id="cart-button" onclick="toggleCart()" style="
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  background-color: #ffc800;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+">
         🛒 Себет (<span id="cart-count">0</span>)
     </button>
-
     <!-- Блок корзины -->
     <div id="cart" style="display: none; position: fixed; right: 20px; top: 80px; width: 280px; max-height: 400px; overflow-y: auto;
          background: white; border: 1px solid #ccc; padding: 15px; z-index: 999;
